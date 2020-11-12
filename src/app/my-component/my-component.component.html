@@ -16,5 +16,13 @@
       </select>
       <button (click)="go()" >GO</button>
 
+<BR>
+<div *ngIf="pokeDetail">
+    Le pokemon selectionné est {{pokeDetail.name}}
+      <ul>
+          <li  *ngFor="let ability of pokeDetail.abilities">{{ability.ability.name}}</li>
+      </ul>
+</div>
+
 
     
