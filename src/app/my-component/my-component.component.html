@@ -7,8 +7,12 @@
 <BR>
     Mon pokemon selectionné est : {{selectedPockeId}}
 <BR>
+    <input [(ngModel)]="searchPokeName">
+    <BR>
+
     <select [(ngModel)] = "selectedPockeId" >
-        <option [value]="poke.id" *ngFor="let poke of pok">             {{poke.name}}</option>
+        <option [value]="poke.id" 
+        *ngFor="let poke of pok | filterPokemonPipe:'name':searchPokeName">             {{poke.name}}</option>
       </select>
 
 

@@ -9,9 +9,8 @@ import { Pokemon } from '../pokemon';
 export class MyComponentComponent implements OnInit {
   id: string = '';
   selectedPockeId : string;
-
-
-    pok : Pokemon [] = [];
+  searchPokeName = '';
+  pok : Pokemon [] = [];
 
   constructor() { 
     this.pok.push (new Pokemon ('1','Reptincel'));
