@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeAPIServiceService } from '../poke-apiservice.service';
+import { PokeShareInfoService } from '../poke-share-info.service';
 import { PokeDetail, Pokemon } from '../pokemon';
 
 @Component({
@@ -15,7 +16,9 @@ export class MyComponentComponent implements OnInit {
   pok : Pokemon [] = [];
   pokeDetail : PokeDetail;
 
-  constructor( private pokeService: PokeAPIServiceService) { 
+  constructor( private pokeService: PokeAPIServiceService,
+    private pokeShareInfoService: PokeShareInfoService
+    ) { 
     /*this.pok.push (new Pokemon ('1','Reptincel'));
     this.pok.push (new Pokemon ('2','Bulbizarre'));
     this.pok.push (new Pokemon ('3','Herbizarre'));
@@ -35,6 +38,7 @@ export class MyComponentComponent implements OnInit {
     }) ;
   }
   go(){
+    this.pokeShareInfoService.setValue(this.selectedPockeId)
 
     if(this.selectedPockeId !='' ){
       this.pokeService.getPokemonInfo(this.selectedPockeId).subscribe(data => this.pokeDetail=data);
