@@ -38,10 +38,12 @@ export class MyComponentComponent implements OnInit {
     }) ;
   }
   go(){
-    this.pokeShareInfoService.setValue(this.selectedPockeId)
+    //this.pokeShareInfoService.setValue(this.selectedPockeId)
 
     if(this.selectedPockeId !='' ){
+      
       this.pokeService.getPokemonInfo(this.selectedPockeId).subscribe(data => this.pokeDetail=data);
+      this.pokeShareInfoService.setValue(this.selectedPockeId);
     };
   }
 

@@ -15,10 +15,12 @@ export class PokedetailComponent implements OnInit {
   detail: PokeDetail;
 
   constructor(  private pokeShareInfoService: PokeShareInfoService
-    ) { }
+    ) {
+      this.pokeShareInfoService.getObservable().subscribe(e => console.log('e' +e));
+     }
 
   ngOnInit(): void {
-    console.log(this.pokeShareInfoService.getValue());
+    //console.log(this.pokeShareInfoService.getValue());
   }
 
 }
