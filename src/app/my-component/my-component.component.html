@@ -18,10 +18,9 @@
 
 <BR>
 <div *ngIf="pokeDetail">
-    Le pokemon selectionné est {{pokeDetail.name}}
-      <ul>
-          <li  *ngFor="let ability of pokeDetail.abilities">{{ability.ability.name}}</li>
-      </ul>
+
+    <app-pokedetail [detail]="pokeDetail"></app-pokedetail>
+    
 </div>
 
 
