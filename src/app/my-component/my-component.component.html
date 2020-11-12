@@ -4,4 +4,12 @@
 <BR>
 
     MON id est : {{id}}
+<BR>
+    Mon pokemon selectionné est : {{selectedPockeId}}
+<BR>
+    <select [(ngModel)] = "selectedPockeId" >
+        <option [value]="poke.id" *ngFor="let poke of pok">             {{poke.name}}</option>
+      </select>
+
+
     
